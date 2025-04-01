@@ -28,6 +28,5 @@ public class ArrowGenerator : MonoBehaviour
             yield return new WaitForSeconds(Span);
         }
         // ReSharper disable once IteratorNeverReturns
-        // dO
     }
 }

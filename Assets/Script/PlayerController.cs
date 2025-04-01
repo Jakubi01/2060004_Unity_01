@@ -3,20 +3,24 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private GameObject _player;
+    private GameDirector _gameDirector;
+
     private const float ScreenX = 10.4f;
     private const float MoveX = .3f;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        _gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
         _player = GameObject.Find("Player");
-        GameObject.Find("GameDirector").GetComponent<Delegate>().OnCallBack();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        MovementByGetKeyDown();
+        if (_gameDirector is not null && !_gameDirector.isGameOver)
+        {
+            MovementByGetKeyDown();
+        }
     }
 
     private void MovementByGetKeyDown()

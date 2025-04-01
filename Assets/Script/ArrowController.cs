@@ -34,7 +34,6 @@ public class ArrowController : MonoBehaviour
         if (transform.position.y < KillY)
         {
             Destroy(gameObject);
-            Debug.Log("ss");
         }
 
         var p1 = transform.position;
