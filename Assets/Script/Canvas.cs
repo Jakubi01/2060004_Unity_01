@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Canvas : MonoBehaviour
 {
+    // Singleton pattern
     private static Canvas _ins;
 
     public static Canvas Instance
@@ -49,9 +50,12 @@ public class Canvas : MonoBehaviour
     {
         _player = GameObject.Find("Player");
         _gameDirector = GameObject.Find("GameDirector").GetComponent<GameDirector>();
-        
+
+        // 버튼마다 함수 바인딩
         RButton.onClick.AddListener(RButtonClickedEvent);
         LButton.onClick.AddListener(LButtonClickedEvent);
+
+        // 시작 시 버튼이 안보이게게
         reStartButton?.gameObject.SetActive(false);
     }
     
