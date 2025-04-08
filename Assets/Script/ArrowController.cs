@@ -45,6 +45,7 @@ public class ArrowController : MonoBehaviour
             return;
         
         Destroy(gameObject);
+        // 게임 오브젝트가 null이 아니라면 HP 게이지 감소
         _gameDirector?.GetComponent<GameDirector>().DecreaseHp();
     }
 }
